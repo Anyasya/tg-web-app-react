@@ -22,7 +22,7 @@ const Applicant = ({product, className, onAdd, onDelete,addedItems}: { product: 
                 <span>Стоимость: <b>{product.price}</b></span>
             </div>
             <Button className={'add-btn'} onClick={onAddHandler} style={{marginRight: 10}}>
-                {addedItems.includes(addedItems) ? 'Отменить' : 'Выбрать'}
+                {addedItems.includes(product) ? 'Отменить' : 'Выбрать'}
 
             </Button>
             <Button className={'add-btn'} onClick={onDeleteHandler}>

@@ -65,7 +65,7 @@ const List = () => {
         } else {
             tg.MainButton.show();
             tg.MainButton.setParams({
-                text: `Перейти к выбору этапа (кандидатов: ${newItems.length + 1})`
+                text: `Перейти к выбору этапа (кандидатов: ${newItems.length})`
             })
         }
     }

@@ -3,6 +3,7 @@ import './App.css';
 import {useTelegram} from "./hooks/useTelegram";
 import {Route, Routes} from 'react-router-dom'
 import List from "./components/List";
+import {StatusesPage} from "./pages/statusesPage";
 
 function App() {
     const {
@@ -20,7 +21,7 @@ function App() {
       </header>
         <Routes>
             <Route index element={<List />}/>
-            {/*<Route path={'form'} element={<Form />}/>*/}
+            <Route path={'new-status'} element={<StatusesPage />}/>
         </Routes>
     </div>
   );
