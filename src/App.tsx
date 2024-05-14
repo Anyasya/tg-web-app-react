@@ -5,7 +5,9 @@ import {Route, Routes} from 'react-router-dom'
 import List from "./components/List";
 
 function App() {
-    const {onToggleButton, tg} = useTelegram();
+    const {
+        onToggleButton,
+        tg} = useTelegram();
 
     useEffect(() => {
         tg.ready();
