@@ -65,7 +65,7 @@ const List = () => {
         } else {
             tg.MainButton.show();
             tg.MainButton.setParams({
-                text: `Перейти к выбору этапа (Выбрано кандидатов: ${newItems.length + 1})`
+                text: `Перейти к выбору этапа (кандидатов: ${newItems.length + 1})`
             })
         }
     }
@@ -84,6 +84,7 @@ const List = () => {
                     onAdd={onAdd}
                     onDelete={onDelete}
                     className={'item'}
+                    addedItems={addedItems}
                 />
             ))}
         </div>

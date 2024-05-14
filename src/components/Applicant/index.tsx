@@ -2,7 +2,7 @@ import React from 'react';
 // import './ProductItem.css';
 import Button from "../Button";
 
-const Applicant = ({product, className, onAdd, onDelete}: { product: any, className?: string, onAdd: any, onDelete: any }) => {
+const Applicant = ({product, className, onAdd, onDelete,addedItems}: { product: any, className?: string, onAdd: any, onDelete: any,addedItems:any }) => {
 
     const onAddHandler = () => {
         onAdd(product);
@@ -22,7 +22,8 @@ const Applicant = ({product, className, onAdd, onDelete}: { product: any, classN
                 <span>Стоимость: <b>{product.price}</b></span>
             </div>
             <Button className={'add-btn'} onClick={onAddHandler} style={{marginRight: 10}}>
-                Выбрать
+                {addedItems.includes(addedItems) ? 'Отменить' : 'Выбрать'}
+
             </Button>
             <Button className={'add-btn'} onClick={onDeleteHandler}>
                 -
