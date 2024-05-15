@@ -4,6 +4,7 @@ import {useTelegram} from "./hooks/useTelegram";
 import {Route, Routes} from 'react-router-dom'
 import List from "./components/List";
 import {StatusesPage} from "./pages/statusesPage";
+import FormPage from "./pages/formPage";
 
 function App() {
     const {
@@ -22,6 +23,7 @@ function App() {
         <Routes>
             <Route index element={<List />}/>
             <Route path={'new-status'} element={<StatusesPage />}/>
+            <Route path={'form'} element={<FormPage />}/>
         </Routes>
     </div>
   );
