@@ -15,6 +15,7 @@ const Form = () => {
             subject
         }
         tg.sendData(JSON.stringify(data));
+        
     }, [country, salary_from, subject])
 
     useEffect(() => {

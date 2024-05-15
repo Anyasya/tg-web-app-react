@@ -3,6 +3,7 @@ import React, {useState} from 'react';
 import {useTelegram} from "../../hooks/useTelegram";
 import {useCallback, useEffect} from "react";
 import Applicant from "../Applicant";
+import {redirect} from "react-router-dom";
 
 
 
@@ -27,18 +28,19 @@ const List = () => {
     ])
 
     const onSendData = useCallback(() => {
-        const data = {
-            products: addedItems,
-            totalPrice: getTotalPrice(addedItems),
-            queryId,
-        }
-        fetch('http://85.119.146.179:8000/web-data', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(data)
-        })
+        // const data = {
+        //     products: addedItems,
+        //     totalPrice: getTotalPrice(addedItems),
+        //     queryId,
+        // }
+        // fetch('http://85.119.146.179:8000/web-data', {
+        //     method: 'POST',
+        //     headers: {
+        //         'Content-Type': 'application/json',
+        //     },
+        //     body: JSON.stringify(data)
+        // })
+        redirect("/new-status");
     }, [addedItems])
 
     useEffect(() => {
