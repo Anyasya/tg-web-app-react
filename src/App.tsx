@@ -5,6 +5,7 @@ import {Route, Routes} from 'react-router-dom'
 import List from "./components/List";
 import {StatusesPage} from "./pages/statusesPage";
 import FormPage from "./pages/formPage";
+import List2 from "./components/List2";
 
 function App() {
     const {
@@ -24,6 +25,7 @@ function App() {
             <Route index element={<List />}/>
             <Route path={'new-status'} element={<StatusesPage />}/>
             <Route path={'form'} element={<FormPage />}/>
+            <Route path={'applicants'} element={<List2 />}/>
         </Routes>
     </div>
   );
