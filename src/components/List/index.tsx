@@ -3,7 +3,7 @@ import React, {useState} from 'react';
 import {useTelegram} from "../../hooks/useTelegram";
 import {useCallback, useEffect} from "react";
 import Applicant from "../Applicant";
-import {redirect} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 
 
 
@@ -40,7 +40,8 @@ const List = () => {
         //     },
         //     body: JSON.stringify(data)
         // })
-        redirect("/new-status");
+        const navigate = useNavigate()
+        navigate("/new-status")
     }, [addedItems])
 
     useEffect(() => {
