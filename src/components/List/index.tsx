@@ -4,6 +4,7 @@ import {useTelegram} from "../../hooks/useTelegram";
 import {useCallback, useEffect} from "react";
 import Applicant from "../Applicant";
 import {useNavigate} from "react-router-dom";
+import Button from "../Button";
 
 
 
@@ -16,6 +17,7 @@ const getTotalPrice = (items = []) => {
 const List = () => {
     const [addedItems, setAddedItems] = useState<any>([]);
     const {tg, queryId} = useTelegram();
+    const navigate = useNavigate()
     const [products, setProducts] = useState([
         {id: '1', title: 'Вадим Орлюк', price: 50000, description: 'АО Фирма Август, Менеджер по импортным закупкам',src: 'https://huntlee.ru/main/_ipx/_/remote/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBdHU5IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--d091b49821ba57679d1f437537165a1bfc9908fd/avatar.jpeg'},
         {id: '2', title: 'Евгения Кусмакова', price: 120000, description: 'Оператор колл-центра , диспетчер', src: 'https://huntlee.ru/main/_ipx/_/remote/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBdGk5IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--0ef8fc2ed962e6cd4254e65abd249b4a000cccab/avatar.jpeg'},
@@ -40,7 +42,7 @@ const List = () => {
         //     },
         //     body: JSON.stringify(data)
         // })
-        const navigate = useNavigate()
+
         navigate("/new-status")
     }, [addedItems])
 
@@ -90,6 +92,7 @@ const List = () => {
                     addedItems={addedItems}
                 />
             ))}
+            {/*<Button onClick={()=>navigate('/new-status')}>Далее </Button>*/}
         </div>
     );
 };
