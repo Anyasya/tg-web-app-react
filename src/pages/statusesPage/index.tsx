@@ -3,11 +3,11 @@ import {useTelegram} from "../../hooks/useTelegram";
 export const StatusesPage = () => {
     const {tg} = useTelegram();
 
-    const setStatus = (status:any) => {
-            const data = {
-                status
+    const setStatus = (statusText:any) => {
+            const status = {
+                statusText
             }
-            tg.sendData(JSON.stringify(data));
+            tg.sendData(JSON.stringify(status));
     }
     return (
         <div>
