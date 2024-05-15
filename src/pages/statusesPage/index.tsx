@@ -2,24 +2,17 @@ import './style.css'
 import {useTelegram} from "../../hooks/useTelegram";
 import {useCallback, useEffect, useState} from "react";
 export const StatusesPage = () => {
-    const {tg} = useTelegram();
-    const [subject, setSubject] = useState('Собеседование HR');
+    const [subject2, setSubject] = useState('Собеседование HR');
     const [isSended, setIsSended] = useState(false);
-
-    useEffect(() => {
-        tg.MainButton.setParams({
-            text: 'Перместить кандидатов на этап'
-        })
-    }, [])
-
+    const {tg} = useTelegram();
 
     const onSendData = useCallback(() => {
         const data = {
-            statusText: subject
+            statusText: subject2
         }
         tg.sendData(JSON.stringify(data));
         setIsSended(true)
-    }, [subject])
+    }, [subject2])
 
     useEffect(() => {
         tg.onEvent('mainButtonClicked', onSendData)
@@ -28,6 +21,17 @@ export const StatusesPage = () => {
         }
     }, [onSendData])
 
+    useEffect(() => {
+        tg.MainButton.setParams({
+            text: 'Перместить на этап'
+        })
+    }, [])
+
+
+
+
+
+
 
     const onChangeSubject = (e:any) => {
         setSubject(e.target.value)
@@ -35,7 +39,7 @@ export const StatusesPage = () => {
     return (
         <div>
             <h3> Выберите этап для кандидатов:</h3>
-            <select value={subject} onChange={onChangeSubject} className={'select'}>
+            <select value={subject2} onChange={onChangeSubject} className={'select'}>
                 <option value={'Собеседование HR'}>Собеседование HR</option>
                 <option value={'Собеседование Тех'}>Собеседование Тех</option>
                 <option value={'Тестовое задание'}>Тестовое задание</option>
