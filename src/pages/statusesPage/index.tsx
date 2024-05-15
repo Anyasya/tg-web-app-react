@@ -8,7 +8,7 @@ export const StatusesPage = () => {
 
     useEffect(() => {
         tg.MainButton.setParams({
-            text: 'Перместить кандидатов этап'
+            text: 'Перместить кандидатов на этап'
         })
     }, [])
 
