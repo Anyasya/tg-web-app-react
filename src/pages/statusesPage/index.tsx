@@ -22,6 +22,8 @@ export const StatusesPage = () => {
     }, [onSendData])
 
     useEffect(() => {
+        tg.MainButton.disable()
+        tg.MainButton.enable()
         tg.MainButton.setParams({
             text: 'Перместить на этап'
         })
