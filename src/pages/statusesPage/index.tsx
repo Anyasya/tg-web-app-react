@@ -1,13 +1,7 @@
 import './style.css'
-import {useCallback, useEffect} from "react";
 import {useTelegram} from "../../hooks/useTelegram";
 export const StatusesPage = () => {
     const {tg} = useTelegram();
-    useEffect(() => {
-        tg.MainButton.setParams({
-            text: 'Начать поиск'
-        })
-    }, [])
 
     const setStatus = (status:any) => {
             const data = {
