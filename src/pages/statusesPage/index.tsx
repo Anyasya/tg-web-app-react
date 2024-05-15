@@ -1,7 +1,12 @@
 import './style.css'
 import {useTelegram} from "../../hooks/useTelegram";
+import {useEffect} from "react";
 export const StatusesPage = () => {
     const {tg} = useTelegram();
+
+    useEffect(() => {
+        tg.MainButton.hide();
+    }, []);
 
     const setStatus = (statusText:any) => {
             const status = {
