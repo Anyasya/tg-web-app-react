@@ -12,6 +12,7 @@ export const StatusesPage = () => {
         }
         tg.sendData(JSON.stringify(data));
         setIsSended(true)
+        tg.close()
     }, [subject2])
 
     useEffect(() => {
