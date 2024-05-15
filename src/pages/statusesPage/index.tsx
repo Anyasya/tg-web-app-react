@@ -4,10 +4,11 @@ import {useCallback, useEffect, useState} from "react";
 export const StatusesPage = () => {
     const {tg} = useTelegram();
     const [subject, setSubject] = useState('Собеседование HR');
+    const [isSended, setIsSended] = useState(false);
 
     useEffect(() => {
         tg.MainButton.setParams({
-            text: 'Выбрать этап'
+            text: 'Перместить кандидатов этап'
         })
     }, [])
 
@@ -17,7 +18,7 @@ export const StatusesPage = () => {
             statusText: subject
         }
         tg.sendData(JSON.stringify(data));
-
+        setIsSended(true)
     }, [subject])
 
     useEffect(() => {
@@ -27,12 +28,6 @@ export const StatusesPage = () => {
         }
     }, [onSendData])
 
-    useEffect(() => {
-        tg.onEvent('mainButtonClicked', onSendData)
-        return () => {
-            tg.offEvent('mainButtonClicked', onSendData)
-        }
-    }, [onSendData])
 
     const onChangeSubject = (e:any) => {
         setSubject(e.target.value)
@@ -48,6 +43,7 @@ export const StatusesPage = () => {
                 <option value={'Оффер'}>Оффер</option>
                 <option value={'Отказ'}>Отказ</option>
             </select>
+            {isSended && <p>Отпралвено</p>}
         </div>
 )
 }
