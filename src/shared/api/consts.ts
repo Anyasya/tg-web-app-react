@@ -1,0 +1,5 @@
+export const baseDevUrl = 'https://jsonplaceholder.typicode.com'
+export const stageDevUrl = 'https://jsonplaceholder.typicode.com'
+export const prodUrl = 'https://jsonplaceholder.typicode.com'
+export const localhost = 'http://localhost:3000/'
+export const localhost2 = 'localhost:3000'

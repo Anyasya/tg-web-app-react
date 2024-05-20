@@ -79,6 +79,8 @@ const List = () => {
         setProducts(products.filter(item => item.id !== product.id))
     }
 
+
+
     return (
         <div className={'list'} style={{display: 'flex',
             flexWrap: 'wrap',

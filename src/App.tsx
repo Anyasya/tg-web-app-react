@@ -5,7 +5,8 @@ import {Route, Routes} from 'react-router-dom'
 import List from "./components/List";
 import {StatusesPage} from "./pages/statusesPage";
 import FormPage from "./pages/formPage";
-import List2 from "./components/List2";
+import {ProjectsPage} from "./pages/projectsPage";
+import Logo from "./components/Svgs/gainius-logo";
 
 function App() {
     const {
@@ -19,13 +20,14 @@ function App() {
     return (
     <div className="App">
       <header className="App-header">
-      Выбор кандидатов
+          <Logo/>
+          <div className={'decorative-line'}></div>
       </header>
         <Routes>
             <Route index element={<List />}/>
             <Route path={'new-status'} element={<StatusesPage />}/>
             <Route path={'form'} element={<FormPage />}/>
-            <Route path={'applicants'} element={<List2 />}/>
+            <Route path={'projects'} element={<ProjectsPage />}/>
         </Routes>
     </div>
   );

@@ -1,0 +1,49 @@
+.project-card {
+    border: 1px solid #ddd;
+    padding: 16px;
+    margin-bottom: 16px;
+    border-radius: 8px;
+    background: #FAFCFF;
+}
+
+.project-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    gap: 8px;
+}
+
+.project-header h3 {
+    margin: 0;
+    font-size: 1.25em;
+    max-width: 100px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.project-header span {
+    font-size: 0.875em;
+    color: #888;
+}
+
+.project-description {
+    margin-bottom: 8px;
+}
+
+.project-link {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.approve {
+    color: #59B259;
+}
+
+.reject {
+    color: #FB3640;
+}
+
+.project-link:hover {
+    text-decoration: underline;
+}
