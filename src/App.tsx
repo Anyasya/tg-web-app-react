@@ -24,7 +24,7 @@ function App() {
           <div className={'decorative-line'}></div>
       </header>
         <Routes>
-            <Route index element={<List />}/>
+            <Route index element={<ProjectsPage />}/>
             <Route path={'new-status'} element={<StatusesPage />}/>
             <Route path={'form'} element={<FormPage />}/>
             <Route path={'projects'} element={<ProjectsPage />}/>
