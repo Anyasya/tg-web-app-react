@@ -2,9 +2,11 @@ import {useProjectsStore} from "../../store";
 import {useEffect} from "react";
 import ProjectList from "../../components/Projects/projectsList";
 import './style.css'
+import {useTelegram} from "../../hooks/useTelegram";
 
 export const ProjectsPage = () => {
     const {fetchGetProjects, projects, setProjects} = useProjectsStore()
+    const {user} = useTelegram();
     useEffect(() => {
         ;(async () => {
             // setIsLoading(true)
@@ -23,7 +25,7 @@ export const ProjectsPage = () => {
 
     return (
         <div>
-            <h1>Проекты, подобранные для вас:</h1>
+            <h1>Проекты, подобранные для {user?.username}:</h1>
             <ProjectList projects={projects} />
         </div>
     )
